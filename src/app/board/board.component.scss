@@ -1,0 +1,25 @@
+.board { 
+    
+    .col-4{
+        border: 2px solid #000;
+        &:nth-child(1), &:nth-child(2), &:nth-child(3){
+            border-top: 0;
+            border-bottom: 0;        
+        }
+        &:nth-child(1), &:nth-child(2), &:nth-child(3){
+            border-left: 0;
+        }
+        &:nth-child(4), &:nth-child(5), &:nth-child(6){
+            border-left: 0;
+        }
+        &:nth-child(3), &:nth-child(6), &:nth-child(9){
+            border-right: 0;
+        }
+        
+        &:nth-child(7), &:nth-child(8), &:nth-child(9){
+            border-bottom: 0;
+            border-left: 0;
+            border-top: 0;
+        }
+    }
+}

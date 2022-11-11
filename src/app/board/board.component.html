@@ -1,0 +1,15 @@
+<section class="board h-100 d-flex align-items-center flex-column justify-content-center" [ngStyle]="{'background-image': boardService.playerWon['won'] === true ? 'url(\'assets/images/gif/confetti-4.gif\')' : ''}">
+    <h1 class="mb-5"><u>Tic-Tac-Toe</u></h1>
+    <h3 class="mb-5" [ngClass]="boardService.playerWon['won'] === true ? 'text-danger' : ''">
+        <u>{{boardService.playerWon['status']}} </u>
+        <button class=" ms-2 btn btn-success" *ngIf="boardService.playerWon['won'] || boardService.turnCount > 8" (click)="resetBoard()">Reset Board</button>
+    </h3>
+    
+    <div class="container">
+        <div class="row g-0">            
+            <div class="col-4" *ngFor="let square of boardService.baord">
+                <app-square [square]="square" [reSetClicked]=" isReset"></app-square>
+            </div>           
+        </div>
+    </div>    
+</section>
